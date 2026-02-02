@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="">
+
+
+  <style>
+    .blog-cards{
+      margin-top: 100px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    a{
+      text-decoration: none;
+    }
+
+    .blog-card{
+      display: block;
+      padding: 5px 10px 20px 20px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px 2px rgba(100, 100, 100, 0.326);
+      flex-basis: calc(46%);
+
+    }
+  </style>
+
+</head>
+<body>
+
+  
+{% extends 'base.html' %}
+
+  
+
+
+  
+  {% block content %}
+
+
+  <div class="blog-cards">
+    {% for post in object_list %}
+    <div class="blog-card">
+      <a href="{% url 'detail' post.pk %}">  <h3>  {{ post.title }} | Author: <span>{{ post.author }}</span></h3></a>
+      <p>  {{ post.body | slice:':20' }}<a href="{% url 'detail' post.pk %}">...</a> </p>
+    </div>
+    {% endfor %}
+
+  </div>
+
+  <a href="{% url 'post_new' %}">New Post</a>
+  {% endblock content %}
+    
+
+</body>
+</html>
