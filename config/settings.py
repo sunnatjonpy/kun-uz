@@ -72,6 +72,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://your-project-name.onrender.com',
+]
+
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
