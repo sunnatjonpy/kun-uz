@@ -73,7 +73,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'config.wsgi.application'
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://your-project-name.onrender.com',
+    'https://kun-uz-gz8w.onrender.com',
 ]
 
 
